@@ -22,56 +22,69 @@
         
         body {
             background: #FFFFFF;
-            color: #191F28;
+            color: #334155;
         }
         
         .section-bg {
-            background: #F7F8FA;
+            background: #F9FAFB;
         }
         
         .card {
             background: #FFFFFF;
-            border: 1px solid #E5E8EB;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
         }
         
         .card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             transition: all 0.3s ease;
         }
         
         .accent-text {
-            color: #3182F6;
+            color: #0F172A;
+        }
+        
+        .accent-yellow {
+            color: #FFD600;
         }
         
         .cta-button {
-            background: #3182F6;
-            color: #FFFFFF;
+            background: #FFD600;
+            color: #0F172A;
             transition: all 0.2s ease;
-            font-weight: 600;
+            font-weight: 700;
+            border-radius: 16px;
         }
         
         .cta-button:hover {
-            background: #1B64DA;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(49, 130, 246, 0.3);
+            background: #FFE033;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(255, 214, 0, 0.3);
         }
         
         .line-button {
-            border: 1.5px solid #3182F6;
-            color: #3182F6;
+            border: 1.5px solid #0F172A;
+            color: #0F172A;
             transition: all 0.2s ease;
             font-weight: 600;
         }
         
         .line-button:hover {
-            background: #3182F6;
+            background: #0F172A;
             color: #FFFFFF;
         }
         
         .number-highlight {
-            color: #3182F6;
+            color: #FFD600;
             font-weight: 800;
+        }
+        
+        .headline-text {
+            color: #0F172A;
+        }
+        
+        .body-text {
+            color: #334155;
         }
         
         .accordion-content {
@@ -93,7 +106,7 @@
         .step-number {
             width: 48px;
             height: 48px;
-            background: #3182F6;
+            background: #0F172A;
             color: #FFFFFF;
             border-radius: 12px;
             display: flex;
@@ -106,13 +119,13 @@
         .feature-icon {
             width: 64px;
             height: 64px;
-            background: #F0F7FF;
+            background: #FFF9D6;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 28px;
-            color: #3182F6;
+            color: #0F172A;
         }
         
         .contract-card {
@@ -124,14 +137,23 @@
         .sticky-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #E5E8EB;
+            border-bottom: 1px solid #E5E7EB;
         }
         
         .price-tag {
             font-size: 48px;
             font-weight: 800;
-            color: #3182F6;
+            color: #FFD600;
             line-height: 1.2;
+        }
+        
+        .footer-dark {
+            background: #0F172A;
+            color: #FFFFFF;
+        }
+        
+        .check-icon {
+            color: #FFD600;
         }
     </style>
 </head>
@@ -140,7 +162,7 @@
     <!-- Sticky Header -->
     <header class="fixed top-0 left-0 right-0 z-50 sticky-header py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="text-2xl font-bold accent-text">AI 김실장</div>
+            <div class="text-2xl font-bold headline-text">AI 김실장</div>
             <a href="#contact-form" class="line-button px-6 py-3 rounded-lg font-semibold text-sm md:text-base inline-block">
                 채용 상담하기
             </a>
@@ -152,15 +174,15 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 text-gray-900">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 headline-text">
                         놓친 전화,<br>
-                        <span class="accent-text">매출이 되다</span>
+                        <span class="accent-yellow">매출이 되다</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                    <p class="text-xl md:text-2xl body-text mb-8 leading-relaxed">
                         작업 중 받지 못한 전화를 AI 김실장이 대신 받아<br>
                         견적 문의를 놓치지 않게 도와드립니다.
                     </p>
-                    <a href="https://smartstore.naver.com/kimsilzzang02/products/12833207861" target="_blank" rel="noopener noreferrer" class="cta-button px-8 py-4 rounded-xl text-lg font-bold inline-block">
+                    <a href="https://smartstore.naver.com/kimsilzzang02/products/12833207861" target="_blank" rel="noopener noreferrer" class="cta-button px-10 py-5 text-lg font-bold inline-block">
                         월 29,900원에 김실장 채용하기
                     </a>
                 </div>
@@ -185,7 +207,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="card rounded-2xl p-12 md:p-16" data-aos="fade-up">
                 <div class="text-center mb-8">
-                    <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 headline-text">
                         작업 중 못 받은 전화,<br>
                         <span class="number-highlight">1년에 1,700만 원</span> 손해입니다
                     </h2>
@@ -203,15 +225,15 @@
                     </div>
                 </div>
                 
-                <div class="space-y-4 text-gray-700 leading-relaxed">
+                <div class="space-y-4 body-text leading-relaxed">
                     <p class="text-lg">
-                        운전하며, 설비, 용달 사장님들은 하루 평균 <strong class="text-gray-900">5~7건의 견적 문의 전화</strong>를 놓칩니다.
+                        운전하며, 설비, 용달 사장님들은 하루 평균 <strong class="headline-text">5~7건의 견적 문의 전화</strong>를 놓칩니다.
                     </p>
                     <p class="text-lg">
-                        하지만 작업 중에는 전화를 받기 어렵고, 놓친 전화의 <strong class="text-gray-900">70%는 다시 걸려오지 않습니다</strong>.
+                        하지만 작업 중에는 전화를 받기 어렵고, 놓친 전화의 <strong class="headline-text">70%는 다시 걸려오지 않습니다</strong>.
                     </p>
-                    <p class="text-lg font-semibold text-gray-900">
-                        한 건당 평균 견적 금액이 100만 원이라면 하루 3건 놓치는 것만으로 <span class="accent-text">1,000만 원의 기회</span>를 잃는 셈입니다.
+                    <p class="text-lg font-semibold headline-text">
+                        한 건당 평균 견적 금액이 100만 원이라면 하루 3건 놓치는 것만으로 <span class="accent-yellow">1,000만 원의 기회</span>를 잃는 셈입니다.
                     </p>
                 </div>
             </div>
@@ -222,7 +244,7 @@
     <section class="py-20 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 headline-text">
                     앱 설치 0건.<br>
                     착신전환만 하면 AI 김실장이 알아서 견적을 받아옵니다
                 </h2>
@@ -232,8 +254,8 @@
                 <!-- Step 1 -->
                 <div class="card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
                     <div class="step-number mb-6">1</div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">착신전환 설정</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
+                    <h3 class="text-2xl font-bold mb-4 headline-text">착신전환 설정</h3>
+                    <p class="body-text leading-relaxed mb-4">
                         스마트폰에서 착신전환만 설정하면 끝입니다.
                     </p>
                     <div class="feature-icon">
@@ -273,7 +295,7 @@
             </div>
             
             <div class="text-center mt-12">
-                <p class="text-lg text-gray-600">
+                <p class="text-lg body-text">
                     복잡한 앱 설치나 사용법을 익힐 필요 없습니다.<br>
                     착신전환만 하면 바로 시작할 수 있습니다.
                 </p>
@@ -284,7 +306,7 @@
     <!-- Features Section -->
     <section class="py-20 px-6 md:px-12 section-bg">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 text-gray-900" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 headline-text" data-aos="fade-up">
                 주요 기능
             </h2>
             
@@ -298,8 +320,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900">자동 전화 응대</h3>
-                            <p class="text-gray-600 leading-relaxed">
+                            <h3 class="text-2xl font-bold mb-3 headline-text">자동 전화 응대</h3>
+                            <p class="body-text leading-relaxed">
                                 AI가 자동으로 전화를 받아 필요한 정보를 수집합니다. 
                                 고객 이름, 연락처, 작업 종류, 위치, 희망 일정 등을 정확하게 파악합니다.
                             </p>
@@ -368,10 +390,10 @@
     <section class="py-20 px-6 md:px-12">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-900">
-                    <span class="accent-text">월 29,900원</span>에 김실장 채용하기
+                <h2 class="text-4xl md:text-5xl font-black mb-4 headline-text">
+                    <span class="accent-yellow">월 29,900원</span>에 김실장 채용하기
                 </h2>
-                <p class="text-xl text-gray-600">
+                <p class="text-xl body-text">
                     직원 한 명 고용하는 비용의 1/100로 24시간 전화 응대 서비스를 이용하세요
                 </p>
             </div>
@@ -379,7 +401,7 @@
             <div class="grid md:grid-cols-2 gap-6 mb-12">
                 <div class="card rounded-2xl p-6 text-center">
                     <div class="text-3xl mb-2">✓</div>
-                    <p class="text-gray-700 font-semibold">24시간 자동 응대</p>
+                    <p class="body-text font-semibold">24시간 자동 응대</p>
                 </div>
                 <div class="card rounded-2xl p-6 text-center">
                     <div class="text-3xl mb-2">✓</div>
@@ -404,7 +426,7 @@
             </div>
             
             <div class="text-center">
-                <a href="https://smartstore.naver.com/kimsilzzang02/products/12833207861" target="_blank" rel="noopener noreferrer" class="cta-button px-12 py-5 rounded-xl text-xl font-bold inline-block">
+                <a href="https://smartstore.naver.com/kimsilzzang02/products/12833207861" target="_blank" rel="noopener noreferrer" class="cta-button px-12 py-5 text-xl font-bold inline-block">
                     지금 바로 시작하기
                 </a>
             </div>
@@ -414,38 +436,38 @@
     <!-- Recommended For Section -->
     <section class="py-20 px-6 md:px-12 section-bg">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-12 text-gray-900" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-12 headline-text" data-aos="fade-up">
                 이런 분들께 추천합니다
             </h2>
             
             <div class="space-y-4">
                 <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up">
-                    <div class="text-2xl text-blue-500 font-bold">✓</div>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <div class="text-2xl check-icon font-bold">✓</div>
+                    <p class="text-lg body-text leading-relaxed">
                         현장 일이 많은 사장님 (인테리어, 설비, 용달 등)
                     </p>
                 </div>
                 <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="text-2xl text-blue-500 font-bold">✓</div>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <div class="text-2xl check-icon font-bold">✓</div>
+                    <p class="text-lg body-text leading-relaxed">
                         작업 중 전화를 받기 어려워 견적 문의를 자주 놓치시는 분
                     </p>
                 </div>
                 <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-2xl text-blue-500 font-bold">✓</div>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <div class="text-2xl check-icon font-bold">✓</div>
+                    <p class="text-lg body-text leading-relaxed">
                         직원 고용이 부담스러운 1인 사장님
                     </p>
                 </div>
                 <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-2xl text-blue-500 font-bold">✓</div>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <div class="text-2xl check-icon font-bold">✓</div>
+                    <p class="text-lg body-text leading-relaxed">
                         복잡한 앱이나 시스템 사용이 어려운 5060 사장님
                     </p>
                 </div>
                 <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-2xl text-blue-500 font-bold">✓</div>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <div class="text-2xl check-icon font-bold">✓</div>
+                    <p class="text-lg body-text leading-relaxed">
                         24시간 전화 응대가 필요하지만 비용이 부담스러운 분
                     </p>
                 </div>
@@ -456,21 +478,21 @@
     <!-- FAQ Section -->
     <section class="py-20 px-6 md:px-12">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 text-gray-900" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 headline-text" data-aos="fade-up">
                 자주 묻는 질문
             </h2>
             
             <div class="space-y-4">
                 <!-- FAQ 1 -->
                 <div class="card rounded-xl overflow-hidden" data-aos="fade-up">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
                         <span>앱을 설치해야 하나요?</span>
                         <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <div class="px-6 pb-6 body-text leading-relaxed">
                             아니요. 복잡한 앱 설치 없이 착신전환만 설정하면 됩니다. 
                             스마트폰을 잘 모르셔도 1분이면 설정 완료입니다.
                         </div>
@@ -479,14 +501,14 @@
                 
                 <!-- FAQ 2 -->
                 <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="50">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
                         <span>사용법이 어렵지 않나요?</span>
                         <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <div class="px-6 pb-6 body-text leading-relaxed">
                             아니요. 5060 사장님도 쉽게 사용 가능하도록 간단하게 설계했습니다. 
                             착신전환 설정만 하면 자동으로 작동합니다.
                         </div>
@@ -495,14 +517,14 @@
                 
                 <!-- FAQ 3 -->
                 <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
                         <span>월 29,900원 외에 추가 비용이 있나요?</span>
                         <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <div class="px-6 pb-6 body-text leading-relaxed">
                             아니요. 월 29,900원만 결제하시면 됩니다. 
                             추가 요금이나 숨겨진 비용은 전혀 없습니다.
                         </div>
@@ -511,14 +533,14 @@
                 
                 <!-- FAQ 4 -->
                 <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="150">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
                         <span>해지는 언제든 가능한가요?</span>
                         <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <div class="px-6 pb-6 body-text leading-relaxed">
                             네. 위약금이나 수수료 없이 언제든 해지 가능합니다. 
                             해지 시 남은 기간에 대한 환불도 가능합니다.
                         </div>
@@ -527,14 +549,14 @@
                 
                 <!-- FAQ 5 -->
                 <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
                         <span>고객이 AI인 걸 알면 불쾌해하지 않을까요?</span>
                         <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <div class="px-6 pb-6 body-text leading-relaxed">
                             아니요. AI 김실장은 자연스럽게 대화하며 대부분의 고객은 AI인지 모릅니다. 
                             최신 AI 기술로 사람과 대화하는 것처럼 자연스럽게 응대합니다.
                         </div>
@@ -545,11 +567,11 @@
     </section>
     
     <!-- Footer & Contact -->
-    <footer class="py-20 px-6 md:px-12 section-bg">
+    <footer class="py-20 px-6 md:px-12">
         <div class="max-w-6xl mx-auto">
             <!-- Tally Form -->
             <div id="contact-form" class="mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-black text-center mb-12 text-gray-900">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-12 headline-text">
                     문의하기
                 </h2>
                 <div class="card rounded-2xl p-8">
@@ -568,16 +590,18 @@
             </div>
             
             <!-- Company Info -->
-            <div class="text-center text-gray-600 text-sm space-y-2">
-                <div class="text-2xl font-bold accent-text mb-4">AI 김실장</div>
-                <p>사업자등록번호: 000-00-00000 | 대표: 홍길동</p>
-                <p>주소: 서울특별시 강남구 테헤란로 123</p>
-                <p>이메일: contact@kim-manager.ai | 전화: 02-1234-5678</p>
-                <div class="pt-4 border-t border-gray-300 mt-6">
-                    <p class="text-xs text-gray-500">
-                        환불 규정: 이용 시작 후 7일 이내 100% 환불 가능. 
-                        이후 남은 기간에 대해 일할 계산하여 환불됩니다.
-                    </p>
+            <div class="footer-dark rounded-2xl p-12 mt-16">
+                <div class="text-center text-white text-sm space-y-2">
+                    <div class="text-2xl font-bold mb-4">AI 김실장</div>
+                    <p>사업자등록번호: 000-00-00000 | 대표: 홍길동</p>
+                    <p>주소: 서울특별시 강남구 테헤란로 123</p>
+                    <p>이메일: contact@kim-manager.ai | 전화: 02-1234-5678</p>
+                    <div class="pt-4 border-t border-gray-600 mt-6">
+                        <p class="text-xs text-gray-400">
+                            환불 규정: 이용 시작 후 7일 이내 100% 환불 가능. 
+                            이후 남은 기간에 대해 일할 계산하여 환불됩니다.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
