@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 김실장 - 24시간 전화 응대 서비스</title>
+    <title>CALLI - AI 전화 비서 서비스</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,9 +11,8 @@
     <!-- Pretendard Font -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         * {
@@ -21,70 +20,78 @@
         }
         
         body {
-            background: #FFFFFF;
-            color: #334155;
+            color: #333333;
         }
         
-        .section-bg {
-            background: #F9FAFB;
+        .deep-navy {
+            background: #1B2538;
+            color: #FFFFFF;
         }
         
-        .card {
-            background: #FFFFFF;
-            border: 1px solid #E5E7EB;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-        }
-        
-        .card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        .yellow-btn {
+            background: #FFD600;
+            color: #000000;
+            font-weight: 700;
             transition: all 0.3s ease;
         }
         
-        .accent-text {
-            color: #0F172A;
-        }
-        
-        .accent-yellow {
-            color: #FFD600;
-        }
-        
-        .cta-button {
-            background: #FFD600;
-            color: #0F172A;
-            transition: all 0.2s ease;
-            font-weight: 700;
-            border-radius: 16px;
-        }
-        
-        .cta-button:hover {
+        .yellow-btn:hover {
             background: #FFE033;
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(255, 214, 0, 0.3);
         }
         
-        .line-button {
-            border: 1.5px solid #0F172A;
-            color: #0F172A;
-            transition: all 0.2s ease;
-            font-weight: 600;
+        .stat-number {
+            font-size: 80px;
+            font-weight: 900;
+            line-height: 1;
         }
         
-        .line-button:hover {
-            background: #0F172A;
+        @media (max-width: 768px) {
+            .stat-number {
+                font-size: 60px;
+            }
+        }
+        
+        .testimonial-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-color: #FFD600;
+        }
+        
+        .pricing-card {
+            background: #FFFFFF;
+            border: 2px solid #E5E7EB;
+            border-radius: 20px;
+            padding: 48px 32px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card.featured {
+            background: #1B2538;
             color: #FFFFFF;
+            border-color: #FFD600;
+            border-width: 3px;
+            transform: scale(1.05);
         }
         
-        .number-highlight {
+        .pricing-card.featured .price {
             color: #FFD600;
-            font-weight: 800;
-        }
-        
-        .headline-text {
-            color: #0F172A;
-        }
-        
-        .body-text {
-            color: #334155;
         }
         
         .accordion-content {
@@ -97,378 +104,324 @@
             max-height: 500px;
         }
         
-        .hero-image {
-            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
-            border-radius: 24px;
-            overflow: hidden;
-        }
-        
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: #0F172A;
-            color: #FFFFFF;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 20px;
-        }
-        
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: #FFF9D6;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: #0F172A;
-        }
-        
-        .contract-card {
-            background: #FFFFFF;
-            border: 2px solid #E5E8EB;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
-        
         .sticky-header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(27, 37, 56, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #E5E7EB;
         }
         
-        .price-tag {
-            font-size: 48px;
-            font-weight: 800;
-            color: #FFD600;
-            line-height: 1.2;
+        .step-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
         }
         
-        .footer-dark {
-            background: #0F172A;
-            color: #FFFFFF;
-        }
-        
-        .check-icon {
-            color: #FFD600;
+        @media (max-width: 768px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
     
-    <!-- Sticky Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 sticky-header py-4 px-6 md:px-12">
+    <!-- Header -->
+    <header class="sticky-header fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="text-2xl font-bold headline-text">AI 김실장</div>
-            <a href="#contact-form" class="line-button px-6 py-3 rounded-lg font-semibold text-sm md:text-base inline-block">
-                채용 상담하기
-            </a>
+            <div class="text-2xl font-bold text-white">CALLI</div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-white hover:text-yellow-300 transition">서비스 소개</a>
+                <a href="#pricing" class="text-white hover:text-yellow-300 transition">요금안내</a>
+                <a href="#contact" class="text-white hover:text-yellow-300 transition">문의하기</a>
+            </nav>
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+            <div class="flex flex-col gap-4">
+                <a href="#features" class="text-white hover:text-yellow-300 transition">서비스 소개</a>
+                <a href="#pricing" class="text-white hover:text-yellow-300 transition">요금안내</a>
+                <a href="#contact" class="text-white hover:text-yellow-300 transition">문의하기</a>
+            </div>
         </div>
     </header>
     
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 px-6 md:px-12 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
+    <section class="deep-navy pt-32 pb-24 px-6 md:px-12 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto w-full">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 headline-text">
-                        놓친 전화,<br>
-                        <span class="accent-yellow">매출이 되다</span>
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                        사장님, 현장에만 집중하세요.<br>
+                        전화는 김실장이 받습니다.
                     </h1>
-                    <p class="text-xl md:text-2xl body-text mb-8 leading-relaxed">
-                        작업 중 받지 못한 전화를 AI 김실장이 대신 받아<br>
-                        견적 문의를 놓치지 않게 도와드립니다.
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                        앱 설치 없는 AI 전화 비서,<br>
+                        월 29,900원에 채용하세요.
                     </p>
-                    <a href="https://smartstore.naver.com/kimsilzzang02/products/12833207861" target="_blank" rel="noopener noreferrer" class="cta-button px-10 py-5 text-lg font-bold inline-block">
-                        월 29,900원에 김실장 채용하기
+                    <a href="#pricing" class="yellow-btn inline-block px-10 py-5 rounded-xl text-lg">
+                        무료 체험 신청하기
                     </a>
                 </div>
-                <div class="hero-image" data-aos="fade-left">
-                    <!-- 실물 사진 영역 - 실제 이미지 URL로 교체하세요 -->
-                    <div class="w-full h-[500px] bg-gray-200 flex items-center justify-center">
-                        <div class="text-center text-gray-400">
-                            <svg class="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            <p class="text-sm">작업 중인 현장 사진</p>
-                            <p class="text-xs mt-2">실제 이미지로 교체 예정</p>
-                        </div>
+                <div class="flex justify-center md:justify-end">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x800/1B2538/FFFFFF?text=Smartphone+Mockup" 
+                             alt="스마트폰 목업" 
+                             class="w-full max-w-[300px] md:max-w-[400px] rounded-3xl shadow-2xl">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Pain Point Section -->
-    <section class="py-20 px-6 md:px-12 section-bg">
-        <div class="max-w-6xl mx-auto">
-            <div class="card rounded-2xl p-12 md:p-16" data-aos="fade-up">
-                <div class="text-center mb-8">
-                    <h2 class="text-4xl md:text-5xl font-black mb-4 headline-text">
-                        작업 중 못 받은 전화,<br>
-                        <span class="number-highlight">1년에 1,700만 원</span> 손해입니다
-                    </h2>
-                </div>
-                
-                <!-- 손실 이미지 영역 -->
-                <div class="mb-8 rounded-xl overflow-hidden bg-gray-100" style="height: 300px;">
-                    <div class="w-full h-full flex items-center justify-center text-gray-400">
-                        <div class="text-center">
-                            <svg class="w-20 h-20 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <p>손실 금액 시각화 이미지</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-4 body-text leading-relaxed">
-                    <p class="text-lg">
-                        운전하며, 설비, 용달 사장님들은 하루 평균 <strong class="headline-text">5~7건의 견적 문의 전화</strong>를 놓칩니다.
-                    </p>
-                    <p class="text-lg">
-                        하지만 작업 중에는 전화를 받기 어렵고, 놓친 전화의 <strong class="headline-text">70%는 다시 걸려오지 않습니다</strong>.
-                    </p>
-                    <p class="text-lg font-semibold headline-text">
-                        한 건당 평균 견적 금액이 100만 원이라면 하루 3건 놓치는 것만으로 <span class="accent-yellow">1,000만 원의 기회</span>를 잃는 셈입니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Solution & Process Section -->
-    <section class="py-20 px-6 md:px-12">
+    <!-- Statistics Section -->
+    <section class="py-24 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 headline-text">
-                    앱 설치 0건.<br>
-                    착신전환만 하면 AI 김실장이 알아서 견적을 받아옵니다
-                </h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Step 1 -->
-                <div class="card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
-                    <div class="step-number mb-6">1</div>
-                    <h3 class="text-2xl font-bold mb-4 headline-text">착신전환 설정</h3>
-                    <p class="body-text leading-relaxed mb-4">
-                        스마트폰에서 착신전환만 설정하면 끝입니다.
-                    </p>
-                    <div class="feature-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                        </svg>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="stat-number text-red-600 mb-4">28%</div>
+                    <div class="text-xl font-bold text-gray-900 mb-2">전화 수신 실패율</div>
+                    <p class="text-gray-600">작업 중 전화를 받지 못하는 비율</p>
                 </div>
-                
-                <!-- Step 2 -->
-                <div class="card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-number mb-6">2</div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">AI가 자동 응대</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        김실장이 24시간 전화를 받아 고객 정보를 수집합니다.
-                    </p>
-                    <div class="feature-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                        </svg>
-                    </div>
+                <div class="text-center">
+                    <div class="stat-number text-orange-600 mb-4">85%</div>
+                    <div class="text-xl font-bold text-gray-900 mb-2">부재중 고객 이탈률</div>
+                    <p class="text-gray-600">놓친 전화 후 재연락하지 않는 비율</p>
                 </div>
-                
-                <!-- Step 3 -->
-                <div class="card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-number mb-6">3</div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">알림톡 전송</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        중요한 전화 내용을 카카오톡으로 즉시 알림 받습니다.
-                    </p>
-                    <div class="feature-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                        </svg>
-                    </div>
+                <div class="text-center">
+                    <div class="stat-number text-yellow-600 mb-4">1.7억</div>
+                    <div class="text-xl font-bold text-gray-900 mb-2">연간 놓치는 매출</div>
+                    <p class="text-gray-600">평균적으로 손실되는 연간 매출액</p>
                 </div>
             </div>
-            
-            <div class="text-center mt-12">
-                <p class="text-lg body-text">
-                    복잡한 앱 설치나 사용법을 익힐 필요 없습니다.<br>
-                    착신전환만 하면 바로 시작할 수 있습니다.
-                </p>
+            <p class="text-center text-xl text-gray-700 font-semibold">
+                이 숫자가 사장님의 손실이 될 수 있습니다.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-24 px-6 md:px-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 text-gray-900">
+                이미 많은 사장님들이<br>
+                매출을 지키고 있습니다.
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card">
+                    <div class="mb-4">
+                        <div class="text-lg font-bold text-gray-900 mb-1">박 사장님</div>
+                        <div class="text-sm text-gray-600">인테리어 · 50대</div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        사다리 위에서 전화 오면 식은땀 났는데, 이제 안심하고 일합니다.
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="mb-4">
+                        <div class="text-lg font-bold text-gray-900 mb-1">최 기사님</div>
+                        <div class="text-sm text-gray-600">용달 · 60대</div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        앱 같은 거 깔 줄 모르는데, 전화만 돌리면 되니까 너무 편해요.
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="mb-4">
+                        <div class="text-lg font-bold text-gray-900 mb-1">이 대표님</div>
+                        <div class="text-sm text-gray-600">설비 · 40대</div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        광고 전화 때문에 흐름 끊겼는데, 김실장이 다 끊어주니 속이 시원합니다.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- Features Section -->
-    <section class="py-20 px-6 md:px-12 section-bg">
+    <section id="features" class="py-24 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 headline-text" data-aos="fade-up">
-                주요 기능
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 text-gray-900">
+                이런 기능이 있어요
             </h2>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Feature 1 -->
-                <div class="card rounded-2xl p-8" data-aos="fade-up">
-                    <div class="flex items-start gap-4">
-                        <div class="feature-icon flex-shrink-0">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 headline-text">자동 전화 응대</h3>
-                            <p class="body-text leading-relaxed">
-                                AI가 자동으로 전화를 받아 필요한 정보를 수집합니다. 
-                                고객 이름, 연락처, 작업 종류, 위치, 희망 일정 등을 정확하게 파악합니다.
-                            </p>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-yellow-600"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">스팸 쉴드</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        대출/광고 전화 0.1초 즉시 차단
+                    </p>
                 </div>
-                
-                <!-- Feature 2 -->
-                <div class="card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="50">
-                    <div class="flex items-start gap-4">
-                        <div class="feature-icon flex-shrink-0">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900">정보 자동 수집</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                고객 이름, 연락처, 작업 종류, 위치, 희망 일정 등 
-                                견적에 필요한 모든 정보를 자동으로 수집합니다.
-                            </p>
-                        </div>
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-file-alt text-3xl text-yellow-600"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">견적 요약</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        위치/평수/증상만 쏙 뽑아 카톡 전송
+                    </p>
                 </div>
-                
-                <!-- Feature 3 -->
-                <div class="card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-start gap-4">
-                        <div class="feature-icon flex-shrink-0">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900">실시간 알림톡</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                전화 내용 요약을 카카오톡으로 즉시 전송합니다. 
-                                작업 중에도 놓치지 않고 확인할 수 있습니다.
-                            </p>
-                        </div>
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-3xl text-yellow-600"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">안전 장벽</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        가족 응급 상황 시 작업 중이라도 즉시 연결
+                    </p>
                 </div>
-                
-                <!-- Feature 4 -->
-                <div class="card rounded-2xl p-8" data-aos="fade-up" data-aos-delay="150">
-                    <div class="flex items-start gap-4">
-                        <div class="feature-icon flex-shrink-0">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900">통화 내역 관리</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                모든 통화 내역이 자동으로 저장되어 
-                                고객 관리가 한눈에 가능합니다.
-                            </p>
-                        </div>
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-3xl text-yellow-600"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Zero-UI</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        앱 설치 0건. 착신전환만 하면 끝
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Pricing Section -->
-    <section class="py-20 px-6 md:px-12">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 headline-text">
-                    <span class="accent-yellow">월 29,900원</span>에 김실장 채용하기
-                </h2>
-                <p class="text-xl body-text">
-                    직원 한 명 고용하는 비용의 1/100로 24시간 전화 응대 서비스를 이용하세요
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6 mb-12">
-                <div class="card rounded-2xl p-6 text-center">
-                    <div class="text-3xl mb-2">✓</div>
-                    <p class="body-text font-semibold">24시간 자동 응대</p>
+    <section id="pricing" class="py-24 px-6 md:px-12 deep-navy">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 text-white">
+                합리적인 가격으로 시작하세요
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Entry Plan -->
+                <div class="pricing-card">
+                    <div class="text-center mb-6">
+                        <div class="text-sm font-bold text-gray-600 mb-2">체험용</div>
+                        <h3 class="text-2xl font-black text-gray-900 mb-4">Entry</h3>
+                        <div class="text-4xl font-black text-gray-900 mb-2">0원</div>
+                        <div class="text-sm text-gray-600">기본료</div>
+                    </div>
+                    <div class="border-t border-gray-200 pt-6 mb-6">
+                        <div class="text-lg font-bold text-gray-900 mb-4">건당 5,000원</div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-600 mt-1"></i>
+                                <span>AI 전화 응대</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-600 mt-1"></i>
+                                <span>카톡 요약 전송</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-lg border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition">
+                        시작하기
+                    </a>
                 </div>
-                <div class="card rounded-2xl p-6 text-center">
-                    <div class="text-3xl mb-2">✓</div>
-                    <p class="text-gray-700 font-semibold">정확한 정보 수집</p>
+                
+                <!-- Lite Plan (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="text-center mb-6">
+                        <div class="inline-block bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full mb-2">BEST</div>
+                        <div class="text-sm font-bold text-gray-300 mb-2">1인 사장님 추천</div>
+                        <h3 class="text-2xl font-black mb-4">Lite</h3>
+                        <div class="price text-5xl font-black mb-2">29,900원</div>
+                        <div class="text-sm text-gray-300">월 정기결제</div>
+                    </div>
+                    <div class="border-t border-gray-600 pt-6 mb-6">
+                        <div class="text-lg font-bold mb-4">무제한 수신</div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-500 mt-1"></i>
+                                <span>무제한 AI 전화 응대</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-500 mt-1"></i>
+                                <span>카톡 요약 전송</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-500 mt-1"></i>
+                                <span>스팸 자동 차단</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-500 mt-1"></i>
+                                <span>24시간 운영</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://smartstore.naver.com/kimsilzzang02/products/12833207861" target="_blank" rel="noopener noreferrer" class="yellow-btn block w-full text-center py-3 rounded-lg font-bold">
+                        지금 시작하기
+                    </a>
                 </div>
-                <div class="card rounded-2xl p-6 text-center">
-                    <div class="text-3xl mb-2">✓</div>
-                    <p class="text-gray-700 font-semibold">즉시 알림톡 전송</p>
+                
+                <!-- Pro Plan -->
+                <div class="pricing-card">
+                    <div class="text-center mb-6">
+                        <div class="text-sm font-bold text-gray-600 mb-2">팀 단위 추천</div>
+                        <h3 class="text-2xl font-black text-gray-900 mb-4">Pro</h3>
+                        <div class="text-4xl font-black text-gray-900 mb-2">49,900원</div>
+                        <div class="text-sm text-gray-600">월 정기결제</div>
+                    </div>
+                    <div class="border-t border-gray-200 pt-6 mb-6">
+                        <div class="text-lg font-bold text-gray-900 mb-4">Lite 기능 +</div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-600 mt-1"></i>
+                                <span>녹음 파일 제공</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-600 mt-1"></i>
+                                <span>안심콜 기능</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-yellow-600 mt-1"></i>
+                                <span>우선 지원</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-lg border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition">
+                        문의하기
+                    </a>
                 </div>
-                <div class="card rounded-2xl p-6 text-center">
-                    <div class="text-3xl mb-2">✓</div>
-                    <p class="text-gray-700 font-semibold">앱 설치 불필요</p>
-                </div>
-                <div class="card rounded-2xl p-6 text-center">
-                    <div class="text-3xl mb-2">✓</div>
-                    <p class="text-gray-700 font-semibold">5060 사장님 최적화</p>
-                </div>
-                <div class="card rounded-2xl p-6 text-center">
-                    <div class="text-3xl mb-2">✓</div>
-                    <p class="text-gray-700 font-semibold">합리적인 가격</p>
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="https://smartstore.naver.com/kimsilzzang02/products/12833207861" target="_blank" rel="noopener noreferrer" class="cta-button px-12 py-5 text-xl font-bold inline-block">
-                    지금 바로 시작하기
-                </a>
             </div>
         </div>
     </section>
     
-    <!-- Recommended For Section -->
-    <section class="py-20 px-6 md:px-12 section-bg">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-12 headline-text" data-aos="fade-up">
-                이런 분들께 추천합니다
+    <!-- How to Start Section -->
+    <section class="py-24 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 text-gray-900">
+                간단하게 시작해요
             </h2>
-            
-            <div class="space-y-4">
-                <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up">
-                    <div class="text-2xl check-icon font-bold">✓</div>
-                    <p class="text-lg body-text leading-relaxed">
-                        현장 일이 많은 사장님 (인테리어, 설비, 용달 등)
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="step-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-black text-yellow-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">가입하기</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        1분만에 가입해서 서비스를 시작하세요.
                     </p>
                 </div>
-                <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="text-2xl check-icon font-bold">✓</div>
-                    <p class="text-lg body-text leading-relaxed">
-                        작업 중 전화를 받기 어려워 견적 문의를 자주 놓치시는 분
+                <div class="step-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-black text-yellow-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">설정하기</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        간편한 설정으로 나만의 문구와 기능들을 설정해 보세요.
                     </p>
                 </div>
-                <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-2xl check-icon font-bold">✓</div>
-                    <p class="text-lg body-text leading-relaxed">
-                        직원 고용이 부담스러운 1인 사장님
-                    </p>
-                </div>
-                <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-2xl check-icon font-bold">✓</div>
-                    <p class="text-lg body-text leading-relaxed">
-                        복잡한 앱이나 시스템 사용이 어려운 5060 사장님
-                    </p>
-                </div>
-                <div class="card rounded-xl p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-2xl check-icon font-bold">✓</div>
-                    <p class="text-lg body-text leading-relaxed">
-                        24시간 전화 응대가 필요하지만 비용이 부담스러운 분
+                <div class="step-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-black text-yellow-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">스마트메시지 시작</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        이제 통화 종료 후 스마트메시지가 시작돼요!
                     </p>
                 </div>
             </div>
@@ -476,89 +429,64 @@
     </section>
     
     <!-- FAQ Section -->
-    <section class="py-20 px-6 md:px-12">
+    <section class="py-24 px-6 md:px-12 bg-gray-50">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 headline-text" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 text-gray-900">
                 자주 묻는 질문
             </h2>
-            
             <div class="space-y-4">
                 <!-- FAQ 1 -->
-                <div class="card rounded-xl overflow-hidden" data-aos="fade-up">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
-                        <span>앱을 설치해야 하나요?</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                        <span>AI가 받으면 불법 아닌가요?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 body-text leading-relaxed">
-                            아니요. 복잡한 앱 설치 없이 착신전환만 설정하면 됩니다. 
-                            스마트폰을 잘 모르셔도 1분이면 설정 완료입니다.
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                            안내 멘트 후 녹음되므로 합법입니다. 고객에게 "AI가 응대하고 있습니다"라는 안내를 먼저 하고, 
+                            녹음 동의를 받은 후 대화를 진행합니다. 모든 과정이 법적 요건을 충족합니다.
                         </div>
                     </div>
                 </div>
                 
                 <!-- FAQ 2 -->
-                <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="50">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
-                        <span>사용법이 어렵지 않나요?</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                        <span>해지는 어떻게 하나요?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 body-text leading-relaxed">
-                            아니요. 5060 사장님도 쉽게 사용 가능하도록 간단하게 설계했습니다. 
-                            착신전환 설정만 하면 자동으로 작동합니다.
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                            착신전환만 해제하면 즉시 중단됩니다. 추가 절차나 수수료는 없으며, 
+                            남은 기간에 대해서는 일할 계산하여 환불해드립니다.
                         </div>
                     </div>
                 </div>
                 
                 <!-- FAQ 3 -->
-                <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
-                        <span>월 29,900원 외에 추가 비용이 있나요?</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                        <span>앱 설치가 정말 필요 없나요?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 body-text leading-relaxed">
-                            아니요. 월 29,900원만 결제하시면 됩니다. 
-                            추가 요금이나 숨겨진 비용은 전혀 없습니다.
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                            네, 정말 필요 없습니다. 스마트폰의 기본 착신전환 기능만 설정하시면 됩니다. 
+                            복잡한 앱 다운로드나 회원가입 절차는 전혀 없습니다.
                         </div>
                     </div>
                 </div>
                 
                 <!-- FAQ 4 -->
-                <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="150">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
-                        <span>해지는 언제든 가능한가요?</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg text-gray-900 hover:bg-gray-50 transition">
+                        <span>스팸 전화는 어떻게 차단하나요?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
                     </button>
                     <div class="accordion-content">
-                        <div class="px-6 pb-6 body-text leading-relaxed">
-                            네. 위약금이나 수수료 없이 언제든 해지 가능합니다. 
-                            해지 시 남은 기간에 대한 환불도 가능합니다.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ 5 -->
-                <div class="card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <button class="accordion-btn w-full text-left p-6 flex items-center justify-between font-bold text-lg headline-text hover:bg-gray-50 transition">
-                        <span>고객이 AI인 걸 알면 불쾌해하지 않을까요?</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="px-6 pb-6 body-text leading-relaxed">
-                            아니요. AI 김실장은 자연스럽게 대화하며 대부분의 고객은 AI인지 모릅니다. 
-                            최신 AI 기술로 사람과 대화하는 것처럼 자연스럽게 응대합니다.
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                            AI가 자동으로 대출, 광고, 보험 등 스팸 전화를 0.1초 만에 감지하고 차단합니다. 
+                            진짜 고객 문의만 선별해서 카카오톡으로 알림을 보내드립니다.
                         </div>
                     </div>
                 </div>
@@ -566,67 +494,60 @@
         </div>
     </section>
     
-    <!-- Footer & Contact -->
-    <footer class="py-20 px-6 md:px-12">
-        <div class="max-w-6xl mx-auto">
-            <!-- Tally Form -->
-            <div id="contact-form" class="mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-black text-center mb-12 headline-text">
-                    문의하기
-                </h2>
-                <div class="card rounded-2xl p-8">
-                    <div class="w-full h-[600px] rounded-xl overflow-hidden">
-                        <iframe 
-                            src="https://tally.so/embed/KYeYrV?hideTitle=1&transparentBackground=1" 
-                            width="100%" 
-                            height="100%" 
-                            frameborder="0" 
-                            marginheight="0" 
-                            marginwidth="0"
-                            title="김실장 채용 상담">
-                        </iframe>
+    <!-- Footer -->
+    <footer id="contact" class="py-16 px-6 md:px-12 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <div class="text-2xl font-bold mb-4">CALLI</div>
+                    <p class="text-gray-400 text-sm">
+                        AI 전화 비서로 놓치는 매출을 지키세요.
+                    </p>
+                </div>
+                <div>
+                    <div class="font-bold mb-4">회사 정보</div>
+                    <div class="text-sm text-gray-400 space-y-2">
+                        <p>대표: 정혜민</p>
+                        <p>사업자등록번호: (준비중)</p>
+                        <p>문의: contact@calli.ai</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-bold mb-4">약관</div>
+                    <div class="text-sm text-gray-400 space-y-2">
+                        <a href="#" class="hover:text-white transition">이용약관</a><br>
+                        <a href="#" class="hover:text-white transition">개인정보처리방침</a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Company Info -->
-            <div class="footer-dark rounded-2xl p-12 mt-16">
-                <div class="text-center text-white text-sm space-y-2">
-                    <div class="text-2xl font-bold mb-4">AI 김실장</div>
-                    <p>사업자등록번호: 000-00-00000 | 대표: 홍길동</p>
-                    <p>주소: 서울특별시 강남구 테헤란로 123</p>
-                    <p>이메일: contact@kim-manager.ai | 전화: 02-1234-5678</p>
-                    <div class="pt-4 border-t border-gray-600 mt-6">
-                        <p class="text-xs text-gray-400">
-                            환불 규정: 이용 시작 후 7일 이내 100% 환불 가능. 
-                            이후 남은 기간에 대해 일할 계산하여 환불됩니다.
-                        </p>
-                    </div>
-                </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                <p>© 2024 CALLI. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
     <script>
-        // AOS 초기화
-        AOS.init({
-            duration: 600,
-            easing: 'ease-out',
-            once: true,
-            offset: 100
-        });
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
         
         // Accordion 기능
         document.querySelectorAll('.accordion-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
-                const icon = button.querySelector('svg');
+                const icon = button.querySelector('i');
                 
                 // 현재 열려있는 다른 아코디언 닫기
                 document.querySelectorAll('.accordion-content').forEach(item => {
                     if (item !== content && item.classList.contains('active')) {
                         item.classList.remove('active');
-                        const otherIcon = item.previousElementSibling.querySelector('svg');
+                        const otherIcon = item.previousElementSibling.querySelector('i');
                         if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
                     }
                 });
@@ -647,9 +568,13 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
